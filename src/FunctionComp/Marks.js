@@ -7,7 +7,7 @@ export default function Marks(prop) {
       <span
         className={`textbold ${
           prop.score < 40 ? "red" : prop.score >= 80 ? "green" : ""
-        }  `}
+        }`}
       >
         {" "}
         {prop.score}

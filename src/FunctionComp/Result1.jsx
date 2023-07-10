@@ -5,16 +5,16 @@ import Marks from "./Marks";
 class Result1 extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      studentName: "Ramesh",
+      classStudy: "9th",
+      marks: [
+        { subject: "Maths", score: 80 },
+        { subject: "Physics", score: 30 },
+        { subject: "Chemistry", score: 50 },
+      ],
+    };
   }
-  state = {
-    studentName: "Ramesh",
-    classStudy: "9th",
-    marks: [
-      { subject: "Maths", score: 80 },
-      { subject: "Physics", score: 30 },
-      { subject: "Chemistry", score: 50 },
-    ],
-  };
 
   render() {
     return (

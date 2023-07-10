@@ -1,3 +1,8 @@
+h3, h2 {
+  margin: 2px;
+  padding: 2px;
+}
+
 .marksdiv {
   display: flex;
   justify-content: space-around;

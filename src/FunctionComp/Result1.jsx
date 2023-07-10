@@ -9,11 +9,20 @@ class Result1 extends Component {
       studentName: "Ramesh",
       classStudy: "9th",
       marks: [
-        { subject: "Maths", score: 80 },
-        { subject: "Physics", score: 30 },
-        { subject: "Chemistry", score: 50 },
+        { id: 1, subject: "Maths", score: 80 },
+        { id: 2, subject: "Physics", score: 30 },
+        { id: 3, subject: "Chemistry", score: 50 },
       ],
+      revalueApply: false,
+      count: 0,
     };
+  }
+
+  btnClick() {
+    let state1 = { ...this.state };
+    state1.revalueApply = true;
+    state1.count = state1.count + 1;
+    this.setState({ revalueApply: state1.revalueApply, count: state1.count });
   }
 
   render() {
@@ -25,11 +34,17 @@ class Result1 extends Component {
         />
         <ol>
           {this.state.marks.map((o) => (
-            <li>
+            <li key={o.id}>
               <Marks subject={o.subject} score={o.score} />
             </li>
           ))}
         </ol>
+        <span>
+          {this.state.revalueApply
+            ? "Applied for Revaluation " + this.state.count + " times"
+            : "Apply Revaluation"}{" "}
+        </span>{" "}
+        <button onClick={() => this.btnClick()}>Apply </button>
       </div>
     );
   }
